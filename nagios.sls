@@ -1,11 +1,7 @@
-Nagios install en configs:
-  file.managed:
-    - template: jinja
-    - name: /etc/{{ grains.id }}.cfg
-maak dir:
+Map maken:
   file.directory:
     - name: /etc/nagios_client
-script:
+Script voor configfile:
   file.managed:
     - name: /tmp/nagios_client_conf.sh
     - source: salt://scripts/nagios_client_conf.sh
